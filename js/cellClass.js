@@ -1,9 +1,10 @@
 // Author : Richard Charczenko
 // Edited By : Gina Philipose, Rena Ahn, Zachary Mullen
-// JavaScript file : cellClass.js
-//   Original File : Python
-//   Translated By : Gina Philipose
-// Last Update : July 24th, 2024
+/* JavaScript File : genomeInfo.js
+     The original File was a Python file (GenomeInfo.py) hosted with Flask
+     Translation By : Gina Philipose, Zachary Mullen
+*/
+// Last Update : July 30th, 2024
 
 // Purpose : Define the Cell class
 
@@ -16,7 +17,7 @@
 import Repressor from './repressor.js';
 import Permease from './permease.js';
 import Bgal from './bGal.js';
-import Genome from './GenomeInfo.js';
+import Genome from './genomeInfo.js';
 import CAPcAMP from './cc_Complex.js';
 
 // Overarching class that controls all data from lactose operon
@@ -27,8 +28,11 @@ class Cell {
     //       PARAM lacIn is a number variable, PARAM lacOut is a number variable,
     //       PARAM glu is a number variable,
     //       PARAM capStatus is a string variable (default = "Inactive")
-    //       PARAM time is a number variable (default = 400) !!!!! NOT USED - PARAM for later function!!!!!
-    // Post : FIELD permNum is set to '0'; FIELD bgalNum  is set to '0';
+    //       PARAM time is a number variable (default = 400) !!!!! NOT USED - PARAM for later function? !!!!!
+    // Post : FIELD permEnz is a list of Permease objects;
+    //        FIELD bGalEnz is a list of Bgal objects;
+    //        FIELD archiveConditions is a dictionary storing past values;
+    //        FIELD permNum is set to '0'; FIELD bgalNum  is set to '0';
     //        FIELD gluGal is set to PARAM glu;
     //        FIELD DNA is set to Genome(PARAM mutList) [delegate];
     //        FIELD plasmid is set to 'false';
@@ -42,22 +46,28 @@ class Cell {
         this.bgalEnz = [];
         this.archiveConditions = {"perm":[], "bgal":[], "allo":[], "lacIn":[], "lacOut":[], "glucose + galactose":[]};
         this.time = 0.0;
-        this.permNum = 0;  // !!!!! NOT USED
-        this.bgalNum = 0;  // !!!!! NOT USED
-        this.gluGal = glu;
+        /* !!!!! Note on variable time
+           - can be a value set at construction if the default of 400
+             iterations is due to very rare change
+           - if change is desired and frequent, time can be a variable limited
+             to the generateData function because it is not used elsewhere
+        */
+        this.permNum = 0;   // !!!!! NOT USED !!!!!
+        this.bgalNum = 0;   // !!!!! NOT USED !!!!!
+        this.gluGal = glu;   // ??? what does Gal mean
         this.DNA = new Genome(mutList);
         this.plasmid = false;
-        this.plasmid_data = null;
+        this.plasmid_data = null;   // ??? snake_case for data or change to camelCase
         this.allo = allo;
         this.lacIn = lacIn;
         this.lacOut = lacOut;
-        this.rep = []; //new Repressor(this.get_mutation('RepMutation', this.DNA))
+        this.rep = []; // new Repressor(this.get_mutation('RepMutation', this.DNA))
         this.CAP = new CAPcAMP(capStatus);
     }
 
     // plasmid, plasmid_data Mutator
     // Updates the class with sequence data for a plasmid
-    // Pre : PARAM plasmid_Mut is a ___ variable
+    // Pre : PARAM plasmid_Mut is a dictionary   ??? why snake_Case (w/ a capital)
     // Post : FIELD plasmid_data is set to Genome(PARAM plasmid_Mut);
     //        FIELD plasmid is set to 'true'
     add_plasmid(plasmid_Mut) {
@@ -73,7 +83,7 @@ class Cell {
     //       PARAM location is a Genome object
     // Post : none
     get_mutation(mutation, location) {
-        const gene_data = location.mut[mutation];
+        const gene_data = location.mut[mutation];   // ??? snake_case for data or change to camelCase
         return gene_data;
     }
 
@@ -82,7 +92,7 @@ class Cell {
     // Post : FIELD allo is incremented by '2' if FIELD lacOut is greater than
     //        50 and FIELD DNA.mut["PermMutation"] is 'null'     
     signal() {
-        if(this.lacOut > 50 && this.DNA.mut["PermMutation"]===null) {
+        if(this.lacOut > 50 && this.DNA.mut["PermMutation"] === null) {
             this.allo += 2;
         }
     }
@@ -90,18 +100,18 @@ class Cell {
     // Increases the amount of enzyme class objects (the number of new objects
     // vary based on whether the CAPcAMP complex is active or not active)
     // The previous number of objects is recorded to be used in graph data
-    // Utilizes Function(s)...<location class>.transcribe, get_mutation, CAPcAMP.get_status,
+    // Utilizes Function(s)...Genome.transcribe, get_mutation, CAPcAMP.get_status,
     //                        Math.random
     // Pre : location is a Genome object
     // Post : Bgal(get_mutation("BgalMutation", PARM location)) objects are
-    //        appended to FIELD? bgalEnz as appropriate
+    //        appended to FIELD bgalEnz as appropriate;
     //        Permease(get_mutation("PermMutation", PARM location)) objects are
-    //        appended to FIELD? permEnz as appropriate
-    translate(location){
+    //        appended to FIELD permEnz as appropriate
+    translate(location) {
         if(location.transcribe(this.allo, this.lacOut, this.rep, this.gluGal)) {
-            if(location == this.DNA){
-                let transNum = 1;
-                if(this.CAP.get_status(this.gluGal)){
+            if(location == this.DNA) {
+                var transNum = 1;
+                if(this.CAP.get_status(this.gluGal)) {
                     transNum = 6;
                 }
                 for(let i=0; i<transNum; i++) {
@@ -114,9 +124,9 @@ class Cell {
                         }
                         if(gene == "PermMutation" && value === null) {
                             this.permEnz.push(new Permease(this.get_mutation("PermMutation", location)));
+                        }
                     }
                 }
-                
             } else {
                 for(const [gene, value] of Object.entries(location.mut)) {
                     if(gene == "BgalMutation" && value === null) {
@@ -128,11 +138,10 @@ class Cell {
                 }
             }
         }
-
     }
 
-    // !!!!! Purpose of Function is Unknown !!!!!
     // Mimics degradation lactose operon proteins
+    // Utilizes Function(s)...Math.random
     // Pre : none
     // Post : the last element of FIELD permEnz and FIELD bgalEnz is removed
     degrade() { //// what is the purpose of this?? -> value isn't even used
@@ -143,11 +152,12 @@ class Cell {
         for (let i = 0; i < degrade_rate; i++) {
             const num = Math.floor(Math.random() * 2) + 1;
             if(num == 1) {
+                let value = 0;   // ??? where is value used
                 if(this.permEnz) {
-                    this.permEnz.pop(); //pops last
+                    value = this.permEnz.pop(); //pops last
                 }
                 if(this.bgalEnz) {
-                    this.bgalEnz.pop();
+                    value = this.bgalEnz.pop();
                 }
             }
         }
@@ -168,10 +178,11 @@ class Cell {
                 return;
             }
         }
+        // !!!!! Note : originally inside the if(this.plasmid) condition block
         const num = Math.floor(Math.random()*12) + 1;
         if(num == 1) {
             if (this.get_mutation("PermMutation", location) == null) {
-                this.permEnz.push(new Permase(this.get_mutation("PermMutation", location)));
+                this.permEnz.push(new Permease(this.get_mutation("PermMutation", location)));
             }
             if (this.get_mutation("BgalMutation", location) == null) {
                 this.bgalEnz.push(new Bgal(this.get_mutation("BgalMutation", location)));
@@ -184,33 +195,31 @@ class Cell {
     // Pre : none
     // Post : the current values of FIELD allo, FIELD lacIn, FIELD lacOut, and
     //        FIELD gluGal are added to FIELD archiveConditions;
-    //        FIELD lacOut is set according to the first value returned by
+    //        FIELD lacOut is set according to the "lacOut" value returned by
     //        Permease.rate with the last Permease object in FIELD permEnz;
-    //        FIELD lacIn is set according to the second value returned by
-    //        Permease.rate with the last Permease object in FIELD permEnz and,
-    //        when the second values returned by Bgal.catalyze calls are "lac",
-    //        decremented by each first value returned by the call;
-    //        FIELD allo, when the second values returned by Bgal.catalyze calls
-    //        are "lac", is incremented by each first value returned by the call
-    //        and, when the second values returned by Bgal.catalyze are "allo",
-    //        is decremented by each first value returned by the call;
-    //        FIELD gluGal, when the second values returned by Bgal.catalyze calls
-    //        are "allo", is incremented by each first value returned by the call
+    //        FIELD lacIn is set according to the "lacIn" value returned by
+    //        Permease.rate with the last Permease object in FIELD permEnz;
+    //        Then, for each Bgal.catalyze call (one for each item in FIELD bgalEnz)...
+    //          (1) the newly set FIELD lacIn is incremented by the returned
+    //              "lac" values,
+    //          (2) FIELD allo is incremented by the returned "allo" values, and
+    //          (3) FIELD gluGal is incremented by the returned "gluGal" values
     activeEnzymes() {
         this.archiveConditions["allo"].push(this.allo);
         this.archiveConditions["lacIn"].push(this.lacIn);
         this.archiveConditions["lacOut"].push(this.lacOut);
         this.archiveConditions["glucose + galactose"].push(this.gluGal);
-        for(let item of this.permEnz) {
-            var change = item.rate(this.lacOut, this.lacIn);
-            this.lacOut = change["lacOut"];
-            this.lacIn = change["lacIn"];
+        for(let item in this.permEnz) {
+            //var change = item.rate(this.lacOut, this.lacIn);  // ??? convert to let?
+            //this.lacOut = change["lacOut"];
+            //this.lacIn = change["lacIn"];
         }
-        for(let item of this.bgalEnz) {
-            change = item.catalyze(this.lacIn, this.allo);
-            this.lacIn += change["lac"];
-            this.allo += change["allo"];
-            this.gluGal += change["gluGal"];
+        for(let item in this.bgalEnz) {
+            //change = item.catalyze(this.lacIn, this.allo);  // ??? and declare let here?
+            // !!!!! Note : originally more complex with if/else and increment/decrement
+            //this.lacIn += change["lac"];
+            //this.allo += change["allo"];
+            //this.gluGal += change["gluGal"];
         }
     }
 
@@ -222,7 +231,7 @@ class Cell {
     //        FIELD lacOut is decremented by '0.2', and
     //        FIELD lacIn is incremented by '0.2'
     backGroundTransport() {
-        if(this.lacIn > 0 && this.lacOut > 0) {   // !!!!! condition necessary?
+        if(this.lacIn > 0 && this.lacOut > 0) {   // ??? condition necessary
             const num = Math.floor(Math.random()*3) + 1;
             if(num == 1 && this.lacOut > 1.0) {
                 this.lacOut -= 0.2;
@@ -245,7 +254,8 @@ class Cell {
         this.archiveConditions = {"perm":[], "bgal":[],
                                  "allo":[], "lacIn":[],
                                  "lacOut":[], "glucose + galactose":[]};
-        this.time = 0;
+        //this.time = 0.0;
+        // simulating activity
         while(this.time < time) { // 400 is a the arviturary time set for the simulation to run
             this.archiveConditions["perm"].push(this.permEnz.length);
             this.archiveConditions["bgal"].push(this.bgalEnz.length);
@@ -265,8 +275,9 @@ class Cell {
             if(this.get_mutation("ProMutation", this.DNA) === null) {
                 this.backgroundTranscription(this.DNA);
             }
-            // degradataion 
-            if(this.lacOut + this.lacIn + this.allo < (Math.floor(Math.random()*51)) && !(this.DNA.transcribe(this.allo, this.lacOut, this.rep, this.gluGal))) { /////fix random + "and not"
+            // degradataion
+            if((this.lacOut + this.lacIn + this.allo) < (Math.floor(Math.random()*51))
+               && !(this.DNA.transcribe(this.allo, this.lacOut, this.rep, this.gluGal))) {
                 this.degrade();
             }
             // enzyme activity

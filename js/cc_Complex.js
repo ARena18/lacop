@@ -1,16 +1,17 @@
 // Author : 
 // Edited By: Gina Philipose, Rena Ahn, Zachary Mullen
-// JavaScript File : cc_Complex.js
-//   Original File : Python
-//   Translated By : Gina Philipose
-// Last Update : July 24th, 2024
+/* JavaScript File : genomeInfo.js
+     The original File was a Python file (GenomeInfo.py) hosted with Flask
+     Translation By : Gina Philipose, Zachary Mullen
+*/
+// Last Update : July 30th, 2024
 
 // Purpose : Define the CAPcAMP class
 
 class CAPcAMP {
     // Constructor
-    // Pre : PARAM status is a string variable (preferred)
-    // Post : FIELD status is set to 'false' if PARM status == "Inactive"
+    // Pre : PARAM status is a string variable (recommended for proper output)
+    // Post : FIELD status is set to 'false' if PARM status equals "Inactive"
     //        Otherwise, FIELD status is set to 'true'
     constructor(status) {
         if(status == "Inactive") {

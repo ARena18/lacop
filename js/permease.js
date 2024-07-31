@@ -1,14 +1,15 @@
 // Author : 
 // Edited By : Gina Philipose, Rena Ahn, Zachary Mullen
-// JavaScript File : permease.js
-//   Original File : Python
-//   Translated By : Gina Philipose
-// Last Updated : July 24th, 2024
+/* JavaScript File : genomeInfo.js
+     The original File was a Python file (GenomeInfo.py) hosted with Flask
+     Translation By : Gina Philipose, Zachary Mullen
+*/
+// Last Updated : July 30th, 2024
 
 // Purpose : Define the Permease class
 
 // Dictionary of equilibrium constants based on mutation
-const permeaseMut = { "none":0.2, "lacY-":0.0 };
+//const permeaseMut = { "none":0.2, "lacY-":0.0 };
 
 // Mimics permease membrane protein and is constructed with either no mutations
 // or a non-functional mutation lacY-
@@ -20,8 +21,8 @@ const permeaseMut = { "none":0.2, "lacY-":0.0 };
                                 the passed in doubles by 0
 */
 class Permease {
-    // static permeaseMut = {"none":0.2, "lacY-":0.0 };
-    // !!!!! Better as a separate constant - static variables can be reassigned !!!!!
+    static permeaseMut = {"none":0.2, "lacY-":0.0 };
+    // ??? Better as a separate constant - static variables can be reassigned
 
     // Constructor
     // Pre : PARAM mut is a string variable
@@ -43,13 +44,16 @@ class Permease {
     rate(lacO, lacI) {   // !!!!! change PARAM names to lacOut, lacIn?
         this.age += 1;
         if(lacO > 1.0){
-            //permease is based on a equilibrium, need to do research here
+            // !!!!! permease is based on a equilibrium, need to do research here
             return {
-                lacOut: lacO - Permase.permeaseMut[this.mut ?? "none"],
-                lacIn: lacI + Permase.permeaseMut[this.mut ?? "none"]
+                lacOut: lacO - Permease.permeaseMut[this.mut ?? "none"],
+                lacIn: lacI + Permease.permeaseMut[this.mut ?? "none"]
             }
         }
-        return {lacOut: lacO, lacIn: lacI};
+        return {
+            lacOut: lacO,
+            lacIn: lacI
+        };
     }
 
 }

@@ -1,9 +1,10 @@
 // Author : 
 // Edited By : Gina Philipose, Rena Ahn, Zachary Mullen
-// JavaScript File : LacOp.js
-//   Original File : Python
-//   Translated By : Gina Philipose
-// Last Update : July 24th, 2024
+/* JavaScript File : genomeInfo.js
+     The original File was a Python file (GenomeInfo.py) hosted with Flask
+     Translation By : Gina Philipose, Zachary Mullen
+*/
+// Last Update : July 30th, 2024
 
 // Purpose : Driver file for the LacOp project/simulation
 
@@ -17,15 +18,15 @@ import Cell from './cellClass.js';
 //       PARAM lacIn is a number variable, PARAM lacOut is a number variable,
 //       PARAM Glu is a number variable !!!!! why capitalized?
 // Post : a Cell object is created
-function RunLO(mutL, plasmid, allo, lacIn, lacOut, Glu) {   // !!!!! camelCase?
+function RunLO(mutL, plasmid, allo, lacIn, lacOut, Glu) {   // ??? spell out lacop -> camelCase
     const mutations = convert_mutList_to_dict(mutL);
-    var cap = "Inactive";   // converts to let?
+    var cap = "Inactive";   // ??? convert to let
     if ("Active" in mutL) { 
         cap = "Active";
     }
     var C = new Cell(mutations, allo, lacIn, lacOut, Glu, cap);
-    if(plasmid.length > 0){
-        var shift = [];   // !!!!! convert to let?
+    if(plasmid.length > 0) {
+        var shift = [];   // ??? convert to let
         for(let item of plasmid){
             const slicedItem = item.slice(2);
             shift.push(slicedItem);
@@ -47,20 +48,20 @@ function convert_mutList_to_dict(list) {
         'PermMutation': null};
     for (let item of list){ 
         let sliceItem = item.slice(0,4);
-        if(sliceItem != "none") {   // !!!!! implement else?
-            if (item == "lacP-"){
+        if(sliceItem != "none") {
+            if (item == "lacP-") {      // ??? implement else
                 mutL["ProMutation"] = item;
             }
-            if (item == "lacIs" || item == "lacI-"){
+            if (item == "lacIs" || item == "lacI-") {
                 mutL["RepMutation"] = item;
             }
-            if (item == "lacY-"){
+            if (item == "lacY-") {
                 mutL["PermMutation"] = item;
             }
-            if (item == "lacOc"){
+            if (item == "lacOc") {
                 mutL["OpMutation"] = item;
             }
-            if (item == "lacZ-"){
+            if (item == "lacZ-") {
                 mutL["BgalMutation"] = item;
             }
         }

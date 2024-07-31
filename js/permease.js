@@ -8,9 +8,6 @@
 
 // Purpose : Define the Permease class
 
-// Dictionary of equilibrium constants based on mutation
-//const permeaseMut = { "none":0.2, "lacY-":0.0 };
-
 // Mimics permease membrane protein and is constructed with either no mutations
 // or a non-functional mutation lacY-
 

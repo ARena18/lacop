@@ -210,16 +210,16 @@ class Cell {
         this.archiveConditions["lacOut"].push(this.lacOut);
         this.archiveConditions["glucose + galactose"].push(this.gluGal);
         for(let item in this.permEnz) {
-            //var change = item.rate(this.lacOut, this.lacIn);  // ??? convert to let?
-            //this.lacOut = change["lacOut"];
-            //this.lacIn = change["lacIn"];
+            var change = item.rate(this.lacOut, this.lacIn);  // ??? convert to let?
+            this.lacOut = change["lacOut"];
+            this.lacIn = change["lacIn"];
         }
         for(let item in this.bgalEnz) {
-            //change = item.catalyze(this.lacIn, this.allo);  // ??? and declare let here?
+            change = item.catalyze(this.lacIn, this.allo);  // ??? and declare let here?
             // !!!!! Note : originally more complex with if/else and increment/decrement
-            //this.lacIn += change["lac"];
-            //this.allo += change["allo"];
-            //this.gluGal += change["gluGal"];
+            this.lacIn += change["lac"];
+            this.allo += change["allo"];
+            this.gluGal += change["gluGal"];
         }
     }
 

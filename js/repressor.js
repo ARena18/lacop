@@ -1,9 +1,10 @@
 // Author : 
 // Edited By : Gina Philipose, Rena Ahn, Zachary Mullen
-// JavaScript File : repressor.js
-//   Original File : Python
-//   Translated By : Gina Philipose
-// Last Updated : July 24th, 2024
+/* JavaScript File : genomeInfo.js
+     The original File was a Python file (GenomeInfo.py) hosted with Flask
+     Translation By : Gina Philipose, Zachary Mullen
+*/
+// Last Updated : July 30th, 2024
 
 // Purpose : Define the Repressor class
 
@@ -12,7 +13,7 @@
 
 class Repressor {
     static repressorMut = {"none": "active", "lacI-": "inactive", "lacIs": "stuck"};
-    // !!!!! Better as a constant? - static variables can be reassigned !!!!!
+    // ??? Better as a constant - static variables can be reassigned
 
     // Constructor
     // Pre : PARAM mut is a string variable
@@ -27,7 +28,7 @@ class Repressor {
     // equal to "active"
     // Utilizes Function(s)...conditionCheck
     // Pre : PARAM allo is a number variable,
-    //       PARAM Le is a ___ variable !!!!! why capitalized?
+    //       PARAM Le is a number variable ??? why capitalized
     //       PARAM glu is a number variable
     bound(allo, Le, glu) {
         if (this.status == "stuck") {
@@ -53,6 +54,12 @@ class Repressor {
         const num = Math.random();
         return (num < pBound); // or Le > 50
     }
+
+    /* !!!!! Note on Le
+       - currently the value of lacOut is used in substitute
+       (1) is Le another name for lacOut?
+       (2) if not, what is it? and how is it used?
+    */
 }
 
 export default Repressor;

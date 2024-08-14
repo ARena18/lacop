@@ -1,8 +1,15 @@
-import { RunLO } from "./LacOp.js";
+// Author : Gina Philipose, Rena Ahn, Zachary Mullen
+// JavaScript File : main.js
+// Last Update : August 7th, 2024
+
+// Purpose : Driver file for the LacOp project/simulation
+
+import { runLO } from "./lacop.js";
 
 // temp, delete all below later
-const simCell = RunLO(['noneP', 'ALLO', 'LO', 'noneZ', 'noneY', 'LI', 'GLU', 'Inactive', 'noneO', 'noneI'], [], 0, 0, 200, 0);
+const simCell = runLO(['noneP', 'ALLO', 'LO', 'noneZ', 'noneY', 'LI', 'GLU', 'Inactive', 'noneO', 'noneI'], [], 0, 0, 200, 0); // Cell object
 const timeTable = document.getElementById("temp-table");
+const graphData = [];
 // insert row for each time point
 for (let i = 0; i < simCell.time; i++) {
   const row = timeTable.insertRow();
@@ -21,7 +28,19 @@ for (let i = 0; i < simCell.time; i++) {
   lacInCell.innerHTML = simCell.archiveConditions.lacIn[i].toFixed(3);
   lacOutCell.innerHTML = simCell.archiveConditions.lacOut[i].toFixed(3);
   permCell.innerHTML = simCell.archiveConditions.perm[i];
+
+  graphData.push({
+    time: i,
+    allo: simCell.archiveConditions.allo[i].toFixed(3),
+    bgal: simCell.archiveConditions.bgal[i],
+    glucose: simCell.archiveConditions["glucose + galactose"][i].toFixed(3),
+    lacIn: simCell.archiveConditions.lacIn[i].toFixed(3),
+    lacOut: simCell.archiveConditions.lacOut[i].toFixed(3),
+    perm: simCell.archiveConditions.perm[i]
+  })
 }
 
 // for debugging, get cell object from console
 window.cell = simCell;
+
+export default graphData;

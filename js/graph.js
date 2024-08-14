@@ -7,8 +7,9 @@
 import graphData from './main.js';
 import { Chart } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
 
-let runSimBtn = getElementById("runBtn");
-runSimBtn.addEventListener("click", function() {
+const runSimBtn = getElementById("runBtn");
+
+function drawGraph() {
     console.log("drawGraph ran");
     new Chart(
         document.getElementById('displayGraph'),
@@ -45,4 +46,8 @@ runSimBtn.addEventListener("click", function() {
             }
         }
     );
-})
+}
+
+runSimBtn.addEventListener("click", drawGraph);
+
+export { drawGraph }

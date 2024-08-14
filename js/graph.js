@@ -46,5 +46,3 @@ runSimBtn.addEventListener("click", function() {
     );
     console.log("drawGraph ran");
 })
-
-export { drawGraph }

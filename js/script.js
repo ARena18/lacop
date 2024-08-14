@@ -4,7 +4,7 @@ import graphData from './main.js';
 import { Chart } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
 
 let runSimBtn = getElementById("runBtn");
-runSimBtn.addEventListener("click", function() {   // adding a graph
+function drawGraph() {   // adding a graph
     new Chart(
         document.getElementById('displayGraph'),
         {
@@ -41,7 +41,7 @@ runSimBtn.addEventListener("click", function() {   // adding a graph
         }
     );
     console.log("drawGraph ran");
-})
+}
 
 
 const display = document.getElementById("displayInputs");
@@ -226,3 +226,8 @@ function openTab(event, tabName) {
 // document.addEventListener('DOMContentLoaded', () => {
 //     document.querySelector('.tablinks').click();
 // });
+
+export {
+    drawGraph,
+    openTab
+};

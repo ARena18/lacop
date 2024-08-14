@@ -1,10 +1,10 @@
-// Author : 
+// Author : Richard Charczenko
 // Edited By: Gina Philipose, Rena Ahn, Zachary Mullen
-/* JavaScript File : genomeInfo.js
-     The original File was a Python file (GenomeInfo.py) hosted with Flask
+/* JavaScript File : ccComplex.js
+     The original File was a Python file (cc_Complex.py) hosted with Flask
      Translation By : Gina Philipose, Zachary Mullen
 */
-// Last Update : July 30th, 2024
+// Last Update : August 7th, 2024
 
 // Purpose : Define the CAPcAMP class
 
@@ -26,7 +26,7 @@ class CAPcAMP {
     // Otherwise, returns the value of FIELD status
     // Pre : PARAM glucose is a number variable
     // Post : none
-    get_status(glucose) {
+    getStatus(glucose) {
         if(glucose > 100) {
             return false;
         }

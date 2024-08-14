@@ -5,7 +5,8 @@
 // Purpose : Graph simulation data using chart.js
 
 import graphData from './main.js';
-import { Chart } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
+import { Chart, LineController, LineElement, Filler, PointElement, LinearScale, Title, CategoryScale, Legend, Tooltip } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
+Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, Title, CategoryScale, Legend, Tooltip);
 
 const runSimBtn = document.getElementById("runBtn");
 

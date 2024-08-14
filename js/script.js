@@ -182,8 +182,3 @@ function openTab(event, tabName) {
 // document.addEventListener('DOMContentLoaded', () => {
 //     document.querySelector('.tablinks').click();
 // });
-
-export {
-    drawGraph,
-    openTab
-};

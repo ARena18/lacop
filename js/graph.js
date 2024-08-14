@@ -7,7 +7,7 @@
 import graphData from './main.js';
 import { Chart } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
 
-const runSimBtn = getElementById("runBtn");
+const runSimBtn = document.getElementById("runBtn");
 
 function drawGraph() {
     console.log("drawGraph ran");

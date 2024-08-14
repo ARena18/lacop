@@ -5,6 +5,7 @@ import { Chart } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
 
 let runSimBtn = getElementById("runBtn");
 function drawGraph() {   // adding a graph
+    console.log("drawGraph ran");
     new Chart(
         document.getElementById('displayGraph'),
         {
@@ -40,7 +41,6 @@ function drawGraph() {   // adding a graph
             }
         }
     );
-    console.log("drawGraph ran");
 }
 
 

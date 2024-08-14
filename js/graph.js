@@ -20,28 +20,34 @@ function drawGraph() {
             labels: graphData.map(row => row.time),
             datasets: [
                 {
-                label: 'Allolactose',
-                data: graphData.map(row => row.allo)
+                    label: 'Allolactose',
+                    data: graphData.map(row => row.allo),
+                    borderColor: "red"
                 },
                 {
-                label: 'Beta-galactosidase',
-                data: graphData.map(row => row.bgal)
+                    label: 'Beta-galactosidase',
+                    data: graphData.map(row => row.bgal),
+                    borderColor: "purple"
                 },
                 {
-                label: 'Glucose',
-                data: graphData.map(row => row.glucose)
+                    label: 'Glucose',
+                    data: graphData.map(row => row.glucose),
+                    borderColor: "yellow"
                 },
                 {
-                label: 'Lactose-In',
-                data: graphData.map(row => row.lacIn)
+                    label: 'Lactose-In',
+                    data: graphData.map(row => row.lacIn),
+                    borderColor: "blue"
                 },
                 {
-                label: 'Lactose-Out',
-                data: graphData.map(row => row.lacOut)
+                    label: 'Lactose-Out',
+                    data: graphData.map(row => row.lacOut),
+                    borderColor: "green"
                 },
                 {
-                label: 'Permease',
-                data: graphData.map(row => row.perm)
+                    label: 'Permease',
+                    data: graphData.map(row => row.perm),
+                    borderColor: "orange"
                 },
             ]
             }

@@ -11,7 +11,6 @@ Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, T
 const runSimBtn = document.getElementById("runBtn");
 
 function drawGraph() {
-    console.log("drawGraph ran");
     new Chart(
         document.getElementById('displayGraph'),
         {
@@ -56,5 +55,3 @@ function drawGraph() {
 }
 
 runSimBtn.addEventListener("click", drawGraph);
-
-export { drawGraph }

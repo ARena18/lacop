@@ -65,32 +65,32 @@ function drawGraph() {
           datasets: [
             {
                 label: 'Allolactose',
-                data: graphData.map(row => row.allo),
+                data: data.map(row => row.allo),
                 borderColor: "#982649"
             },
             {
                 label: 'Beta-galactosidase',
-                data: graphData.map(row => row.bgal),
+                data: data.map(row => row.bgal),
                 borderColor: "#9C95DC"
             },
             {
                 label: 'Glucose',
-                data: graphData.map(row => row.glucose),
+                data: data.map(row => row.glucose),
                 borderColor: "#E9B872"
             },
             {
                 label: 'Lactose-In',
-                data: graphData.map(row => row.lacIn),
+                data: data.map(row => row.lacIn),
                 borderColor: "#094D92"
             },
             {
                 label: 'Lactose-Out',
-                data: graphData.map(row => row.lacOut),
+                data: data.map(row => row.lacOut),
                 borderColor: "#21A179"
             },
             {
                 label: 'Permease',
-                data: graphData.map(row => row.perm),
+                data: data.map(row => row.perm),
                 borderColor: "orange"
             },
           ]

@@ -56,45 +56,42 @@ function runSim() {
 // Post : none
 function drawGraph() {
   const data = runSim();
-  new Chart(
+  if(lineChart) {
+    lineChart.destroy();
+  }
+  var lineChart = new Chart(
     document.getElementById('displayGraph'),
     {
         type: 'line',
         data: {
-          labels: data.map(row => row.time),
-          datasets: [
-            {
-                label: 'Allolactose',
-                data: data.map(row => row.allo),
-                borderColor: "#982649"
-            },
-            {
-                label: 'Beta-galactosidase',
-                data: data.map(row => row.bgal),
-                borderColor: "#9C95DC"
-            },
-            {
-                label: 'Glucose',
-                data: data.map(row => row.glucose),
-                borderColor: "#E9B872"
-            },
-            {
-                label: 'Lactose-In',
-                data: data.map(row => row.lacIn),
-                borderColor: "#094D92"
-            },
-            {
-                label: 'Lactose-Out',
-                data: data.map(row => row.lacOut),
-                borderColor: "#21A179"
-            },
-            {
-                label: 'Permease',
-                data: data.map(row => row.perm),
-                borderColor: "orange"
-            },
-          ]
-        }
+        labels: data.map(row => row.time),
+        datasets: [
+          {
+            label: 'Allolactose',
+            data: data.map(row => row.allo)
+          },
+          {
+            label: 'Beta-galactosidase',
+            data: data.map(row => row.bgal)
+          },
+          {
+            label: 'Glucose',
+            data: data.map(row => row.glucose)
+          },
+          {
+            label: 'Lactose-In',
+            data: data.map(row => row.lacIn)
+          },
+          {
+            label: 'Lactose-Out',
+            data: data.map(row => row.lacOut)
+          },
+          {
+            label: 'Permease',
+            data: data.map(row => row.perm)
+          },
+        ]
+      }
     }
   );
 }

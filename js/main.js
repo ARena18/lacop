@@ -99,5 +99,5 @@ function drawGraph() {
   );
 }
 
-const runSimBtn = getElementById("runBtn");   // button to run simulation
+const runSimBtn = document.getElementById("runBtn");   // button to run simulation
 runSimBtn.addEventListener("click", drawGraph);

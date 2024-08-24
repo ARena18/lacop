@@ -1,6 +1,3 @@
-//// ask about missing functions?: .includes, .indexOf
-
-
 const display = document.getElementById("displayInputs");
 
 const lacIn = document.getElementById("lacIn");
@@ -41,80 +38,187 @@ const plasPres = document.getElementById("plasPres");
 const plasAbs = document.getElementById("plasAbs");
 
 
+const oper2 = document.getElementById("oper2")
+const rep2 = document.getElementById("rep2")
+const perm2 = document.getElementById("perm2")
+const bGal2 = document.getElementById("bGal2")
+const CAPCAMP2 = document.getElementById("CAPCAMP2")
+const prom2 = document.getElementById("prom2")
 
-plasPres.addEventListener("input", function() {
+
+const plasPromPres = document.getElementById("plasPromPres");
+const plasPromAbs = document.getElementById("plasPromAbs"); 
+const plasOperPres = document.getElementById("plasOperPres"); 
+const plasOperAbs = document.getElementById("plasOperAbs");
+const plasRepNone = document.getElementById("plasRepNone"); 
+const plasRepAbs = document.getElementById("plasRepAbs"); 
+const plasRepLac = document.getElementById("plasRepLac"); 
+const plasPermNone = document.getElementById("plasPermNone")
+const plasPermAbs = document.getElementById("plasPermAbs");
+const plasBNone = document.getElementById("plasBNone");
+const plasBAbs = document.getElementById("plasBAbs");
+
+
+plasPromPres.addEventListener("click", function() {
+    prom2.innerHTML="";
+    prom2.append(plasPromPres.value);
+});
+plasPromAbs.addEventListener("click", function() {
+    prom2.innerHTML="";
+    prom2.append(plasPromAbs.value);
+});
+
+plasOperPres.addEventListener("click", function() {
+    oper2.innerHTML="";
+    oper2.append(plasOperPres.value);
+});
+
+plasOperAbs.addEventListener("click", function() {
+    oper2.innerHTML="";
+    oper2.append(plasOperAbs.value);
+});
+
+plasRepNone.addEventListener("click", function() {
+    rep2.innerHTML="";
+    rep2.append(plasRepNone.value);
+});
+
+plasRepAbs.addEventListener("click", function() {
+    rep2.innerHTML="";
+    rep2.append(plasRepAbs.value);
+});
+
+plasRepLac.addEventListener("click", function() {
+    rep2.innerHTML="";
+    rep2.append(plasRepLac.value);
+});
+
+plasPermNone.addEventListener("click", function() {
+    perm2.innerHTML="";
+    perm2.append(plasPermNone.value);
+});
+
+plasPermAbs.addEventListener("click", function() {
+    perm2.innerHTML="";
+    perm2.append(plasPermAbs.value);
+});
+
+plasBNone.addEventListener("click", function() {
+    bGal2.innerHTML="";
+    bGal2.append(plasBNone.value);
+});
+
+plasBAbs.addEventListener("click", function() {
+    bGal2.innerHTML="";
+    bGal2.append(plasBAbs.value);
+});
+
+
+
+window.addEventListener("load", function(){
+    // displays defaults
+    permNone.click();
+    promNone.click();
+    opNone.click();
+    repNone.click();
+    betaNone.click();
+    capInact.click();
+    plasAbs.click();
+    plasPromPres.click()
+    plasOperPres.click()
+    plasRepNone .click()
+    plasPermNone.click()
+    plasBNone.click()
+
+    lacExIn.append(lacOut.value)
+    lacInIn.append(lacIn.value)
+    gluIn.append(gluc.value)
+    lacAlIn.append(allo.value)
+});
+
+
+
+
+plasPres.addEventListener("click", function() {
     plas.innerHTML="";
     plas.append(plasPres.value);
+    document.getElementById("pres").style.display = "block";
+    document.getElementById("plasmidInputs").style.display = "block"
 })
-plasAbs.addEventListener("input", function() {
+
+plasAbs.addEventListener("click", function() {
     plas.innerHTML="";
     plas.append(plasAbs.value);
+    document.getElementById("pres").style.display = "none";
+    document.getElementById("plasmidInputs").style.display = "none"
 })
 
 
 
 
-capAct.addEventListener("input", function() {
+capAct.addEventListener("click", function() {
     CAP.innerHTML="";
     CAP.append(capAct.value);
 })
-capInact.addEventListener("input", function() {
+capInact.addEventListener("click", function() {
     CAP.innerHTML="";
     CAP.append(capInact.value);
 })
 
-betaOne.addEventListener("input", function() {
+betaOne.addEventListener("click", function() {
     betaGal.innerHTML="";
     betaGal.append(betaOne.value);
 })
-betaNone.addEventListener("input", function() {
+betaNone.addEventListener("click", function() {
     betaGal.innerHTML="";
     betaGal.append(betaNone.value);
 })
 
-permOne.addEventListener("input", function() {
+permOne.addEventListener("click", function() {
     permease.innerHTML="";
     permease.append(permOne.value);
 })
-permNone.addEventListener("input", function() {
+permNone.addEventListener("click", function() {
     permease.innerHTML="";
     permease.append(permNone.value);
 })
 
-repTwo.addEventListener("input", function() {
+repTwo.addEventListener("click", function() {
     repressor.innerHTML="";
     repressor.append(repTwo.value);
 })
-repOne.addEventListener("input", function() {
+repOne.addEventListener("click", function() {
     repressor.innerHTML="";
     repressor.append(repOne.value);
 })
-repNone.addEventListener("input", function() {
+repNone.addEventListener("click", function() {
     repressor.innerHTML="";
     repressor.append(repNone.value);
 })
 
-opNone.addEventListener("input", function() {
+opNone.addEventListener("click", function() {
     operator.innerHTML="";
     operator.append(opNone.value);
 })
-opOne.addEventListener("input", function() {
+opOne.addEventListener("click", function() {
     operator.innerHTML="";
     operator.append(opOne.value);
 })
 
 
 
-promOne.addEventListener("input", function() {
+promOne.addEventListener("click", function() {
     promoter.innerHTML="";
     promoter.append(promOne.value);
 })
 
-promNone.addEventListener("input", function() {
+promNone.addEventListener("click", function() {
     promoter.innerHTML="";
     promoter.append(promNone.value);
 })
 
+
+/////
 lacOut.addEventListener("input", function(){
     lacExIn.innerHTML = "";
     lacExIn.append(lacOut.value);  
@@ -144,32 +248,32 @@ function openTab(event, tabName) {
     if(event.currentTarget.className.indexOf(" active")!=-1){
         
 
-
+        // Get all elements with class="tabcontent" and hide them
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
 
-
+        // Get all elements with class="tablinks" and remove the class "active"
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
         
     }
     else {
-
+        // Get all elements with class="tabcontent" and hide them
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
 
-
+        // show tab content
         document.getElementById(tabName).style.display = "block";
 
-
+        // Get all elements with class="tablinks" and remove the class "active"
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
 
- 
+        // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(tabName).style.display = "block";
         event.currentTarget.className += " active";
     }
@@ -178,8 +282,3 @@ function openTab(event, tabName) {
 
 
 }
-
-// Open the first tab by default
-// document.addEventListener('DOMContentLoaded', () => {
-//     document.querySelector('.tablinks').click();
-// });

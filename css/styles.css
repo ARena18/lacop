@@ -43,7 +43,7 @@
 .tabs {
     overflow: hidden;
     background-color: #075b6f;
-    b {
+    b, a {
         overflow: hidden;
         background-color: #075b6f;
     }
@@ -63,7 +63,7 @@
 
 .tabs button:hover {
     background-color: rgb(33, 72, 83);
-    b {
+    b, a {
         background-color: rgb(33, 72, 83);
     }
 }
@@ -82,6 +82,13 @@
     color: #213e47;
     border: 1px solid #213e47;
 }
+#pres {
+    display: none;
+}
+
+#plasmidInputs {
+    display: none;
+}
 
 #displayInputs {
     display:inline-block;
@@ -98,5 +105,18 @@
     align-items: center;
     p {
         margin: 0;
+    }
+}
+
+.combined {
+    display: flex;
+
+}
+#plasmidInputs {
+    border: 1px solid #075b6f;
+    margin: 5px;
+    padding: 10px;
+    h2 u {
+        color: #213e47;
     }
 }

@@ -42,6 +42,8 @@
 
 
 .contents {
+    display: flex;
+    flex-grow: 1;
     background-color: #075b6f;
     display: inline-block;
     padding: 10px;
@@ -65,4 +67,13 @@
     button:hover {
         opacity: 0.5;
     }
+}
+
+.combined {
+    display: flex;
+    align-items: center;
+    border: 1px solid #075b6f;
+}
+.info {
+    color: #213e47;
 }

@@ -29,7 +29,7 @@ Chart.register(
   Tooltip
 );
 
-var lineChart = "";   // stores graph
+var lineChart = "noGraph";   // stores graph
 
 // Runs the simulation to gather simulation data
 // Returns an array of JSON objects representing simulation variable data at
@@ -77,7 +77,7 @@ function runSim() {
 // Post : none
 function drawGraph() {
   const data = runSim();
-  if(lineChart != "") {
+  if(lineChart != "noGraph") {
     lineChart.destroy();
   }
   var lineChart = new Chart(

@@ -85,7 +85,7 @@ function drawGraph() {
           {
             label: 'Beta-galactosidase',
             data: data.map(row => row.bgal),
-            backgroundColor: "#4C1E4F"   // purple
+            backgroundColor: "#702D76"   // purple
           },
           {
             label: 'Glucose',
@@ -122,39 +122,8 @@ function drawGraph() {
     {
         type: 'line',
         data: {
-          labels: data.map(row => row.time),
-          datasets: [
-          {
-            label: 'Allolactose',
-            data: data.map(row => row.allo),
-            backgroundColor: "#DC0445"   // red
-          },
-          {
-            label: 'Beta-galactosidase',
-            data: data.map(row => row.bgal),
-            backgroundColor: "#702D76"   // purple
-          },
-          {
-            label: 'Glucose',
-            data: data.map(row => row.glucose),
-            backgroundColor: "#FFBA49"   // yellow
-          },
-          {
-            label: 'Lactose-In',
-            data: data.map(row => row.lacIn),
-            backgroundColor: "#020AA1"   // blue
-          },
-          {
-            label: 'Lactose-Out',
-            data: data.map(row => row.lacOut),
-            backgroundColor: "#5FAD56"   // green
-          },
-          {
-            label: 'Permease',
-            data: data.map(row => row.perm),
-            backgroundColor: "#FF9B71"   // orange
-          },
-          ]
+          labels: newLabels,
+          datasets: newDataSets
         },
         options: {
           plugins: {

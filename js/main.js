@@ -5,8 +5,29 @@
 // Purpose : Driver file for the LacOp project/simulation
 
 import { runLO } from "./lacop.js";
-import { Chart, LineController, LineElement, Filler, PointElement, LinearScale, Title, CategoryScale, Legend, Tooltip } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
-Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, Title, CategoryScale, Legend, Tooltip);
+import {
+  Chart,
+  LineController,
+  LineElement,
+  Filler,
+  PointElement,
+  LinearScale,
+  Title,
+  CategoryScale,
+  Legend,
+  Tooltip
+} from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.3/+esm';
+Chart.register(
+  LineController,
+  LineElement,
+  Filler,
+  PointElement,
+  LinearScale,
+  Title,
+  CategoryScale,
+  Legend,
+  Tooltip
+);
 
 // Runs the simulation to gather simulation data
 // Returns an array of JSON objects representing simulation variable data at
@@ -58,44 +79,62 @@ function drawGraph() {
     lineChart.destroy();
   }
   var lineChart = new Chart(
-    document.getElementById('displayGraph'),
+    document.getElementById('graphContainer'),
     {
         type: 'line',
         data: {
-        labels: data.map(row => row.time),
-        datasets: [
+          labels: data.map(row => row.time),
+          datasets: [
           {
             label: 'Allolactose',
             data: data.map(row => row.allo),
-            borderColor: "red"
+            borderColor: "#DC0445"   // red
           },
           {
             label: 'Beta-galactosidase',
             data: data.map(row => row.bgal),
-            borderColor: "purple"
+            borderColor: "#4C1E4F"   // purple
           },
           {
             label: 'Glucose',
             data: data.map(row => row.glucose),
-            borderColor: "yellow"
+            borderColor: "#FFBA49"   // yellow
           },
           {
             label: 'Lactose-In',
             data: data.map(row => row.lacIn),
-            borderColor: "blue"
+            borderColor: "#020AA1"   // blue
           },
           {
             label: 'Lactose-Out',
             data: data.map(row => row.lacOut),
-            borderColor: "green"
+            borderColor: "#5FAD56"   // green
           },
           {
             label: 'Permease',
             data: data.map(row => row.perm),
-            borderColor: "orange"
+            borderColor: "#FE5F55"   // orange
           },
-        ]
-      }
+          ]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: "Operon Graph"
+            }
+          },
+          scales: {
+            x: {
+              display: true,
+              text: "Pseudo-Seconds"
+            },
+            y: {
+              display: true,
+              text: "Molecular Units"
+            }
+          }
+        }
     }
   );
 }

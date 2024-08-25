@@ -46,13 +46,25 @@ function runSim() {
   const permInput = document.querySelector('input[name="tab5Options"]:checked').value;
   const bgalInput = document.querySelector('input[name="tab6Options"]:checked').value;
   const cAMPInput = document.querySelector('input[name="tab7Options"]:checked').value;
+  const plasmidStatus = document.querySelector('input[name="tab8Options"]:checked').value;
 
   // Simulation Variables
   let mutList = [promotorInput, operatorInput, repInput, permInput, bgalInput, cAMPInput];
-  const simCell = runLO(mutList, [], alloInput, lacInInput, lacOutInput, glucoseInput);   // Cell object
-    // default parameters : ['noneP', 'ALLO', 'LO', 'noneZ', 'noneY', 'LI', 'GLU', 'Inactive', 'noneO', 'noneI'], [], 0, 0, 200, 0
-    // !!!!! Note : plasmid mutList is currently not implemented
+  let plasmidList = [];
   const graphData = [];   // array of JSON objects storing variable data at each time interval
+
+  if(plasmidStatus == "Present") {
+    const plasmidPromotor = document.querySelector('input[name="promo"]:checked').value;
+    const plasmidOperator = document.querySelector('input[name="oper"]:checked').value;
+    const plasmidRep = document.querySelector('input[name="repress"]:checked').value;
+    const plasmidPerm = document.querySelector('input[name="perm"]:checked').value;
+    const plasmidBgal = document.querySelector('input[name="beta"]:checked').value;
+    plasmidList = [plasmidPromotor, plasmidOperator, plasmidRep, plasmidPerm, plasmidBgal];
+  }
+
+  // Gathering Simulation Data
+  const simCell = runLO(mutList, plasmidList, alloInput, lacInInput, lacOutInput, glucoseInput);   // Cell object
+    // default parameters : ['Inactive'], [], 0, 0, 200, 0
 
   // insert row for each time point
   for (let i = 0; i < simCell.time; i++) {

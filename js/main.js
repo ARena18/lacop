@@ -134,12 +134,16 @@ function drawGraph() {
           },
           scales: {
             x: {
-              display: true,
-              text: "Pseudo-Seconds"
+              title: {
+                display: true,
+                text: "Pseudo-Seconds"
+              }
             },
             y: {
-              display: true,
-              text: "Molecular Units"
+              title: {
+                display: true,
+                text: "Molecular Units"
+              }
             }
           }
         }

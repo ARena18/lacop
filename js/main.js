@@ -29,6 +29,8 @@ Chart.register(
   Tooltip
 );
 
+var lineChart = "";   // stores graph
+
 // Runs the simulation to gather simulation data
 // Returns an array of JSON objects representing simulation variable data at
 // certain time intervals
@@ -75,7 +77,7 @@ function runSim() {
 // Post : none
 function drawGraph() {
   const data = runSim();
-  if(lineChart) {
+  if(lineChart != "") {
     lineChart.destroy();
   }
   var lineChart = new Chart(

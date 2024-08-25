@@ -132,7 +132,7 @@ function drawGraph() {
           {
             label: 'Beta-galactosidase',
             data: data.map(row => row.bgal),
-            backgroundColor: "#4C1E4F"   // purple
+            backgroundColor: "#702D76"   // purple
           },
           {
             label: 'Glucose',

@@ -110,7 +110,9 @@
 
 .combined {
     display: flex;
-
+}
+.combined div {
+    width: 150px;
 }
 #plasmidInputs {
     border: 1px solid #075b6f;

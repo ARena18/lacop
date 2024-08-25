@@ -113,7 +113,7 @@ function drawGraph() {
           {
             label: 'Permease',
             data: data.map(row => row.perm),
-            borderColor: "#FE5F55"   // orange
+            borderColor: "#FF9B71"   // orange
           },
           ]
         },

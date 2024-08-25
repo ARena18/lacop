@@ -45,8 +45,6 @@ function runSim() {
       perm: simCell.archiveConditions.perm[i]
     })
   }
-
-  console.log(mutList);
   return graphData;
 }
 

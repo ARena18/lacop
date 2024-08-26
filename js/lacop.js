@@ -27,12 +27,7 @@ function runLO(mutList, plasmid, allo, lacIn, lacOut, glucose) {
     }
     var C = new Cell(mutations, allo, lacIn, lacOut, glucose, cap);
     if(plasmid.length > 0) {
-        let shift = [];
-        for(let item of plasmid){
-            const slicedItem = item.slice(2);
-            shift.push(slicedItem);
-        }
-        C.addPlasmid(convertMutListToDict(shift));
+        C.addPlasmid(convertMutListToDict(plasmid));
     }
     C.generateData();
     return C;

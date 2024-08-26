@@ -100,7 +100,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.combined div {
+.combined > div {
     width: 300px;
     padding: 10px;
     color:#213e47;

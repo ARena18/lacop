@@ -49,7 +49,7 @@ function runSim() {
   const plasmidStatus = document.querySelector('input[name="tab8Options"]:checked').value;
 
   // Simulation Variables
-  let mutList = [promotorInput, operatorInput, repInput, permInput, bgalInput, cAMPInput];
+  let mutList = [promotorInput, operatorInput, repInput, permInput, bgalInput];
   let plasmidList = [];
   const graphData = [];   // array of JSON objects storing variable data at each time interval
 
@@ -63,7 +63,7 @@ function runSim() {
   }
 
   // Gathering Simulation Data
-  const simCell = runLO(mutList, plasmidList, alloInput, lacInInput, lacOutInput, glucoseInput);   // Cell object
+  const simCell = runLO(mutList, plasmidList, alloInput, lacInInput, lacOutInput, glucoseInput, cAMPInput);   // Cell object
     // default parameters : ['Inactive'], [], 0, 0, 200, 0
 
   // insert row for each time point

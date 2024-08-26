@@ -86,19 +86,6 @@
     display: none;
 }
 
-#plasmidInputs {
-    display: none;
-}
-
-#displayInputs {
-    display:inline-block;
-    padding: 10px;
-    color:#213e47;
-    border: 1px solid #075b6f;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
 .lactoseExterior, .glucose, .lactoseInterior, .lactoseAllo, .promoter, 
 .operator, .repressor, .permease, .betaGal, .CAP, .plasmid {
     display: flex;
@@ -113,8 +100,16 @@
 }
 .combined div {
     width: 300px;
+    display:inline-block;
+    padding: 10px;
+    color:#213e47;
+    border: 1px solid #075b6f;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
+
 #plasmidInputs {
+    display: none;
     border: 1px solid #075b6f;
     margin: 5px;
     padding: 10px;

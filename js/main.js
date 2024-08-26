@@ -157,6 +157,9 @@ function drawGraph() {
               title: {
                 display: true,
                 text: "Pseudo-Seconds"
+              },
+                ticks: {
+                callback: (t, i) => i % 10 ? '' : newLabels[i]
               }
             },
             y: {

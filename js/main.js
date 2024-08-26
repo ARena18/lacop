@@ -64,7 +64,7 @@ function runSim() {
 
   // Gathering Simulation Data
   console.log(mutList);
-  constole.log(plasmidList);
+  console.log(plasmidList);
   const simCell = runLO(mutList, plasmidList, alloInput, lacInInput, lacOutInput, glucoseInput, cAMPInput);   // Cell object
     // default parameters : ['Inactive'], [], 0, 0, 200, 0
 

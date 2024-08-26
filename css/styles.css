@@ -97,10 +97,11 @@
 
 .combined {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .combined div {
     width: 300px;
-    display:inline-block;
     padding: 10px;
     color:#213e47;
     border: 1px solid #075b6f;

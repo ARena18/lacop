@@ -105,15 +105,11 @@
     padding: 10px;
     color:#213e47;
     border: 1px solid #075b6f;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin: 5px;
 }
 
 #plasmidInputs {
     display: none;
-    border: 1px solid #075b6f;
-    margin: 5px;
-    padding: 10px;
     h2 u {
         color: #213e47;
     }

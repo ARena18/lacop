@@ -92,31 +92,37 @@ function drawGraph() {
           {
             label: 'Allolactose',
             data: data.map(row => row.allo),
+            borderColor: "#DC0445",
             backgroundColor: "#DC0445"   // red
           },
           {
             label: 'Beta-galactosidase',
             data: data.map(row => row.bgal),
+            borderColor: "#702D76",
             backgroundColor: "#702D76"   // purple
           },
           {
             label: 'Glucose',
             data: data.map(row => row.glucose),
+            borderColor: "#FFBA49",
             backgroundColor: "#FFBA49"   // yellow
           },
           {
             label: 'Lactose-In',
             data: data.map(row => row.lacIn),
+            borderColor: "#020AA1",
             backgroundColor: "#020AA1"   // blue
           },
           {
             label: 'Lactose-Out',
             data: data.map(row => row.lacOut),
+            borderColor: "#5FAD56",
             backgroundColor: "#5FAD56"   // green
           },
           {
             label: 'Permease',
             data: data.map(row => row.perm),
+            borderColor: "#FF9B71",
             backgroundColor: "#FF9B71"   // orange
           },
   ];

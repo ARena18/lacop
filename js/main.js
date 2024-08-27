@@ -129,7 +129,7 @@ function drawGraph() {
   ];
   
   /* Graph Animation (Automatic Progression) Variables */
-  const totalDuration = 10000;  // millisecond duration for user
+  const totalDuration = 3000;  // millisecond duration for user
   const delayBetweenPoints = totalDuration / data.length;
   const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
   const animation = {

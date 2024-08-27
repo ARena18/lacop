@@ -162,7 +162,7 @@ function drawGraph() {
   };
 
   // Accessing and Updating Graph with new data
-  let lineChart = Chart.getChart('graphContainer');
+  let lineChart = Chart.getChart('graph');
   if(lineChart) {
     lineChart.data.datasets = newDataSets;
     lineChart.data.labels = newLabels;
@@ -171,7 +171,7 @@ function drawGraph() {
   }
   // Otherwise Creating Graph with data
   new Chart(
-    document.getElementById('graphContainer'),
+    document.getElementById('graph'),
     {
         type: 'line',
         data: {

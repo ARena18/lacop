@@ -98,7 +98,6 @@
 .combined {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
 }
 .combined > div:not(:last-child) {
     width: 200px;
@@ -108,7 +107,7 @@
     margin: 5px;
 }
 .combined > div:last-child {
-    width: 800px;
+    width: 1000px;
 }
 
 #plasmidInputs {

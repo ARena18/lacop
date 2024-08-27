@@ -181,6 +181,7 @@ function drawGraph() {
         options: {
           animation,
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             title: {
               display: true,

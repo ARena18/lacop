@@ -96,7 +96,6 @@
 }
 
 .combined {
-    width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -110,7 +109,7 @@
     flex-grow: 1;
 }
 .combined > canvas {
-    flex-grow: 5;
+    width: 500px;
 }
 
 #plasmidInputs {

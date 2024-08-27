@@ -180,6 +180,7 @@ function drawGraph() {
         },
         options: {
           animation,
+          responsive: true,
           plugins: {
             title: {
               display: true,

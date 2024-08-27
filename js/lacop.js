@@ -22,7 +22,6 @@ function runLO(mutList, plasmid, allo, lacIn, lacOut, glucose) {
     const mutations = convertMutListToDict(mutList);
     let cap = "Inactive";
     if (mutList.includes("Active")) { 
-          console.log("cap is active");     // PRINT STATEMENT - DELETE
         cap = "Active";
     }
     var C = new Cell(mutations, allo, lacIn, lacOut, glucose, cap);

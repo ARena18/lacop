@@ -98,6 +98,7 @@
 .combined {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .combined > div:not(:last-child) {
     width: 200px;

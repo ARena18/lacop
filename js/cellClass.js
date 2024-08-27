@@ -41,7 +41,7 @@ class Cell {
     //        FIELD lacIn is set to PARAM lacIn; FIELD lacOut is set to PARAM lacOut;
     //        FIELD rep is set to '[]';
     //        FIELD CAP = CAPcAMP(PARAM capStatus) [delegate];
-    constructor(mutList, allo, lacIn, lacOut, glucose, capStatus = "Inactive", time = 350) {
+    constructor(mutList, allo, lacIn, lacOut, glucose, capStatus = "Inactive", time = 400) {
         // Note : originally permNum and bgalNum were implemented,
         //        initialized to '0'
         this.permEnz = [];

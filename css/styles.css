@@ -107,9 +107,6 @@
     border: 1px solid #075b6f;
     margin: 5px;
 }
-.combined > div:last-child {
-    width: 600px;
-}
 
 #plasmidInputs {
     display: none;

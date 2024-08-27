@@ -100,15 +100,15 @@
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.combined > div {
+.combined > div:not(last-child) {
     width: 200px;
     padding: 10px;
     color:#213e47;
     border: 1px solid #075b6f;
     margin: 5px;
 }
-.combined > canvas {
-    width: 500px;
+.combined > div:last-child {
+    width: 600px;
 }
 
 #plasmidInputs {

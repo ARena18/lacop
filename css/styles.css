@@ -106,7 +106,6 @@
     color:#213e47;
     border: 1px solid #075b6f;
     margin: 5px;
-    flex-grow: 1;
 }
 .combined > canvas {
     width: 500px;

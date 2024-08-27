@@ -100,7 +100,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.combined > div:not(last-child) {
+.combined > div:not(:last-child) {
     width: 200px;
     padding: 10px;
     color:#213e47;

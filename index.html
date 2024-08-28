@@ -1,25 +1,168 @@
+<!-- change to first page setup -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulation | LacOp</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- script will execute after the page has loaded -->
-  <script type="module" src="js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LacOp Simulation</title>
+    <link rel="stylesheet" type="text/css" href="css/first.css">
+    <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
-  <h1>LacOp Simulation</h1>
-  <table id="temp-table">
-    <tr>
-      <th>Time</th>
-      <th>allo</th>
-      <th>bgal</th>
-      <th>glucose + galactose</th>
-      <th>lacIn</th>
-      <th>lacOut</th>
-      <th>perm</th>
-    </tr>
-  </table>
+
+    <!-- go back and change to shared names in Rena's email after -->
+
+    <div class="header">
+        <!-- <br> -->
+        <img src="ecoli.png" width="100" height="50">
+        <h1>LacOp</h1>
+        <a href="simulation.html"><button><h3>Simulation</h3></button></a>
+        <a href="tutorial.html"><button><h3>Tutorial</h3></button></a>
+        <a href="about.html"><button><h3>About</h3></button></a>
+        
+    </div> 
+
+
+    <div class="container1">
+    <h3>Name/ID: <input type="text" id="nameID" placeholder="Name / ID"></h3>
+    
+    <h2>I. Using the above diagram and your knowledge of the lac operon, answer the following questions.</h2>
+    <h3>Lac Operon Structures/Components</h3>
+    <p>1. The lac repressor binds to what site within the lac operon?</p>
+    <label><input id="q1a" type="radio" name="q1" value="a">Promoter</label>
+    <br>
+    <label><input id="q1b" type="radio" name="q1" value="b">Operator</label>
+    <br>
+    <label><input id="q1c" type="radio" name="q1" value="c">Regulator</label>
+    <br>
+    <label><input id="q1d" type="radio" name="q1" value="d">Structural Genes</label>
+    <p>2. Which of the following does NOT encode for a protein that is directly involved in
+        metabolizing lactose? 
+    </p>
+    <label><input id="q2a" type="radio" name="q2" value="a"><i>lacZ</i></label>
+    <br>
+    <label><input id="q2b" type="radio" name="q2" value="b"><i>lacY</i></label>
+    <br>
+    <label><input id="q2c" type="radio" name="q2" value="c"><i>lacI</i></label>
+    <br>
+    <label><input id="q2d" type="radio" name="q2" value="d"><i>lacA</i></label>
+    <p>3. The lac repressor is inactivated by binding to _________ which is derived from
+        ___________? </p>
+    <label><input id="q3a" type="radio" name="q3" value="a">Allolactose, lactose</label>
+    <br>
+    <label><input id="q3b" type="radio" name="q3" value="b">β-galactosidase, galactose</label>
+    <br>
+    <label><input id="q3c" type="radio" name="q3" value="c">Transcription factors, glucose</label>
+    <br>
+    <label><input id="q3d" type="radio" name="q3" value="d">RNA Polymerase, lactose</label>
+    <p>4. Which of the following encode a protein that plays a direct role inregulating the expression of
+        the Lac operon? </p>
+        <label><input id="q4a" type="radio" name="q4" value="a"><i>lacI</i></label>
+        <br>
+        <label><input id="q4b" type="radio" name="q4" value="b"><i>lacP</i></label>
+        <br>
+        <label><input id="q4c" type="radio" name="q4" value="c"><i>lacO</i></label>
+        <br>
+        <label><input id="q4d" type="radio" name="q4" value="d"><i>lacZ</i></label>
+    
+    <h3>Predicting Outcomes</h3>
+    <p>5. Is mRNA transcribed from the lac operon when lactose is present AND glucose is not present
+        in the cell? Why or why not? </p>
+        <label><input id="q5a" type="radio" name="q5" value="a">No, because the inducer is not present</label>
+        <br>
+        <label><input id="q5b" type="radio" name="q5" value="b">Yes, because the inducer is present</label>
+        <br>
+        <label><input id="q5c" type="radio" name="q5" value="c">No, because the inducer is present</label>
+        <br>
+        <label><input id="q5d" type="radio" name="q5" value="d">Yes, because the inducer is not present</label>
+    <p>6. Is the lac repressor active in the absence of lactose within the cell? Why or why not? </p>
+    <label><input id="q6a" type="radio" name="q6" value="a">. Yes, the repressor is active because the inducer is not present. </label>
+    <br>
+    <label><input id="q6b" type="radio" name="q6" value="b">Yes, the repressor is only active in the presence of lactose</label>
+    <br>
+    <label><input id="q6c" type="radio" name="q6" value="c">No, the repressor is not active because the inducer is not present. 
+    </label>
+    <br>
+    <label><input id="q6d" type="radio" name="q6" value="d">None of the above </label>
+    <h2>II. For the following questions use the information provided in each question, the diagram, and
+        your knowledge of the lac operon to give your best answer. </h2>
+
+    <h3>Mutations</h3>
+    <p>7. Predict the phenotype of an E. coli with a lacI-
+        mutation in an otherwise normal genome. </p>
+        <label><input id="q7a" type="radio" name="q7" value="a">The lac genes would only be transcribed in the absence of lactose. </label>
+        <br>
+        <label><input id="q7b" type="radio" name="q7" value="b">The lac genes would only be transcribed in the presence of lactose. </label>
+        <br>
+        <label><input id="q7c" type="radio" name="q7" value="c">TThe lac genes would be transcribed continuously. </label>
+        <br>
+        <label><input id="q7d" type="radio" name="q7" value="d">The lac genes would never be transcribed efficiently. 
+        </label>
+    <p>8. . If a second, normal (wild-type), copy of the lacI gene is inserted into a cell with a lacImutation what will the phenotype of this partial diploid be? </p>
+    <label><input id="q8a" type="radio" name="q8" value="a">The lac genes would only be transcribed in the absence of lactose. </label>
+    <br>
+    <label><input id="q8b" type="radio" name="q8" value="b">The lac genes would only be transcribed in the presence of lactose. </label>
+    <br>
+    <label><input id="q8c" type="radio" name="q8" value="c">The lac genes would be transcribed continuously. </label>
+    <br>
+    <label><input id="q8d" type="radio" name="q8" value="d">The lac genes would never be transcribed efficiently. </label>
+    <p>9. Predict the phenotype of an E. coli cell with a lacIS
+        , “super repressor,” mutation in an
+        otherwise normal genome. </p>
+        <label><input id="q9a" type="radio" name="q9" value="a">The lac genes would only be transcribed in the absence of lactose. </label>
+        <br>
+        <label><input id="q9b" type="radio" name="q9" value="b">The lac genes would only be transcribed in the presence of lactose.</label>
+        <br>
+        <label><input id="q9c" type="radio" name="q9" value="c">The lac genes would be transcribed continuously. </label>
+        <br>
+        <label><input id="q9d" type="radio" name="q9" value="d">The lac genes would never be transcribed efficiently. 
+        </label>
+    <p>10. If a normal copy of the lacIgene were inserted into a cell with the lacIS
+        mutation what would
+       the phenotype of this partial diploid be? </p>
+       <label><input id="q10a" type="radio" name="q10" value="a">The lac genes would only be transcribed in the absence of lactose. </label>
+       <br>
+       <label><input id="q10b" type="radio" name="q10" value="b">The lac genes would only be transcribed in the presence of lactose. 
+       </label>
+       <br>
+       <label><input id="q10c" type="radio" name="q10" value="c">. The lac genes would be transcribed continuously. </label>
+       <br>
+       <label><input id="q10d" type="radio" name="q10" value="d">The lac genes would never be transcribed efficiently. </label>
+    <p>11. An operator mutation,lacOC
+        , prevents the operator from being bound by the repressor. Predict
+        the phenotype of an E. coli cell with this mutation</p>
+        <label><input id="q11a" type="radio" name="q11" value="a">The lac genes would only be transcribed in the absence of lactose. 
+        </label>
+        <br>
+        <label><input id="q11b" type="radio" name="q11" value="b">The lac genes would only be transcribed in the presence of lactose. </label>
+        <br>
+        <label><input id="q11c" type="radio" name="q11" value="c">The lac genes would be transcribed continuously. </label>
+        <br>
+        <label><input id="q11d" type="radio" name="q12" value="d">The lac genes would never be transcribed efficiently. </label>
+        <p>12. Using your knowledge of the lac operon, predict the phenotype of a cell that exhibits a loss of
+        function mutation in the promoter. </p>
+        <label><input id="q12a" type="radio" name="q12" value="a">The lac genes would only be transcribed in the absence of lactose. </label>
+            <br>
+            <label><input id="q12b" type="radio" name="q12" value="b">The lac genes would only be transcribed in the presence of lactose. </label>
+            <br>
+            <label><input id="q12c" type="radio" name="q12" value="c">The lac genes would be transcribed continuously. </label>
+            <br>
+            <label><input id="q12d" type="radio" name="q12" value="d">The lac genes would never be transcribed efficiently. </label>
+
+
+    </div>
+    
+    <div class="tabs">
+    <button id="goToSim"><b>Start Simulation Session</b></button>
+    </div>
+
+
+
+
+    <script src="js/first.js"></script>
+
 </body>
 </html>

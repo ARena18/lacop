@@ -23,7 +23,7 @@
     <br>
     <!-- temporarily keeping till done for easy viewing: delete this button after -->
     <div class="tabs">
-        <a href="firstPage.html"><button><b>Back to First Page</b></button></a>
+        <a href="index.html"><button><b>Back to First Page</b></button></a>
     </div>
     <br>
     <div class="tabs">
@@ -41,21 +41,21 @@
     <div id="sugars" class="content">
         <h1>Sugar Concentration</h1>
         <h3>Varying sugar concentrations within and outside the cell.</h3>
-        <p>Lactose Inside:</p>
-        <input type="text" id="lacIn" placeholder="Lactose Inside" value="0">
-        <p>Lactose Outside:</p>
+        <p>Lactose Exterior:</p>
         <input type="text" id="lacOut" placeholder="Lactose Outside" value="200">
-        <p>Allolactose:</p>
-        <input type="text" id="allo" placeholder="Allolactose" value="0">
         <p>Glucose:</p>
         <input type="text" id="gluc" placeholder="Glucose" value="0">
+        <p>Lactose Interior:</p>
+        <input type="text" id="lacIn" placeholder="Lactose Inside" value="0">
+        <p>Allolactose:</p>
+        <input type="text" id="allo" placeholder="Allolactose" value="0">
     </div>
 
     <div id="promoter" class="content">
         <h1>Promoter</h1>
         <h3>Promotes the transcription of lacZ and LacY</h3>
         <!-- <p>Content for Tab 2.</p> -->
-        <label><input id="promNone" type="radio" name="tab2Options" value="None" checked>None: Functional 'wild type' Promoter</label>
+        <label><input id="promNone" type="radio" name="tab2Options" value="noneP" checked>None: Functional 'wild type' Promoter</label>
         <br>
         <label><input id="promOne" type="radio" name="tab2Options" value="lacP-">lacP-: A mutation which deletes the Promoter</label>
     </div>
@@ -64,7 +64,7 @@
         <h1>Operator</h1>
         <h3>A binding site for Repressor, which can Repress transcription of lacZ and lacY</h3>
         <!-- <p>Content for Tab 3.</p> -->
-        <label><input id="opNone" type="radio" name="tab3Options" value="None" checked>None: Functional 'wild type' Operator</label>
+        <label><input id="opNone" type="radio" name="tab3Options" value="noneO" checked>None: Functional 'wild type' Operator</label>
         <br>
         <label><input id="opOne" type="radio" name="tab3Options" value="lacOc">lacOc: A mutation which deletes the Operater</label>
     </div>
@@ -73,18 +73,18 @@
         <h1>Repressor</h1>
         <h3>A protein that binds to the operator and prevents transcription of LazZ and LacY</h3>
         <!-- <p>Content for Tab 4.</p> -->
-        <label><input id="repNone" type="radio" name="tab4Options" value="None" checked>None: Functional 'wild type' Repressor</label>
+        <label><input id="repNone" type="radio" name="tab4Options" value="noneI" checked>None: Functional 'wild type' Repressor</label>
         <br>
-        <label><input id="repOne" type="radio" name="tab4Options" value="lacl-">lacl-: A mutation which eliminates the repressor function</label>
+        <label><input id="repOne" type="radio" name="tab4Options" value="lacI-">lacI-: A mutation which eliminates the repressor function</label>
         <br>
-        <label><input id="repTwo" type="radio" name="tab4Options" value="lacls">lacls: A 'super' repressor which is no longer responsive to Allolactose</label>
+        <label><input id="repTwo" type="radio" name="tab4Options" value="lacIs">lacIs: A 'super' repressor which is no longer responsive to Allolactose</label>
     </div>
 
     <div id="permease" class="content">
         <h1>Permease (LacY)</h1>
         <h3>A membrane protein that speeds the transport of lactose into the cell</h3>
         <!-- <p>Content for Tab 5.</p> -->
-        <label><input id="permNone" type="radio" name="tab5Options" value="None" checked>None: Functional 'wild type' Permease</label>
+        <label><input id="permNone" type="radio" name="tab5Options" value="noneY" checked>None: Functional 'wild type' Permease</label>
         <br>
         <label><input id="permOne" type="radio" name="tab5Options" value="lacY-">lacY-: A mutation which eliminates the permease function</label>
     </div>
@@ -92,7 +92,7 @@
         <h1>Beta-Galactosidase (LacZ)</h1>
         <h3>An enzyme binds lactose and catalyzes its conversion into allolactose and glucose which will be eventually metabolized into energy.</h3>
         <!-- <pS>Content for Tab 6.</p> -->
-        <label><input id="betaNone" type="radio" name="tab6Options" value="None" checked>None: Functional 'wild type' beta-galactosidase enzyme</label>
+        <label><input id="betaNone" type="radio" name="tab6Options" value="noneZ" checked>None: Functional 'wild type' beta-galactosidase enzyme</label>
         <br>
         <label><input id="betaOne" type="radio" name="tab6Options" value="lacZ-">lacZ-: A mutation which eliminates the beta-galactosidase function</label>
     </div>
@@ -116,54 +116,54 @@
         <div id="pres">
             <h3>Promoter:</h3>
             <label>
-                <input id="plasPromPres" type="radio" name="promo" value="Present" checked> Present: Functional 'wild type' Promoter.
+                <input id="plasPromPres" type="radio" name="promo" value="lacP-" checked> lacP-: Functional 'wild type' Promoter.
             </label>
             <br>
             <label>
-                <input id="plasPromAbs" type="radio" name="promo" value="Absent"> Absent: No lac promoter present on the plasmid.
+                <input id="plasPromAbs" type="radio" name="promo" value="noneP"> Absent: No lac promoter present on the plasmid.
             </label>
             <h3>Operator:</h3>
             <label>
                 <!-- ///fix these - specifics are incorrect -->
-                <input id="plasOperPres" type="radio" name="oper" value="Present" checked> Present: Functional 'wild type' Operator
+                <input id="plasOperPres" type="radio" name="oper" value="lacOc" checked> lacOc: Functional 'wild type' Operator
             </label>
             <br>
             <label>
-                <input id="plasOperAbs" type="radio" name="oper" value="Absent"> Absent: No lac operator present on the plasmid.
+                <input id="plasOperAbs" type="radio" name="oper" value="noneO"> Absent: No lac operator present on the plasmid.
             </label>
             <h3>Repressor:</h3>
             <label>
-                <input id="plasRepNone" type="radio" name="repress" value="None" checked> None: Functional 'wild type' Repressor
-            </label>
-            <br>
-            <label>
-                <input id="plasRepAbs" type="radio" name="repress" value="Absent"> Absent: No repressor present on the plasmid.
+                <input id="plasRepNone" type="radio" name="repress" value="lacI-" checked> lacI-: Functional 'wild type' Repressor
             </label>
             <br>
             <label>
                 <input id="plasRepLac" type="radio" name="repress" value="lacIs"> lacIs: A 'super' repressor which is no longer responsive to Allolactose
             </label>
+            <br>
+            <label>
+                <input id="plasRepAbs" type="radio" name="repress" value="noneI"> Absent: No repressor present on the plasmid.
+            </label>
             <h3>Permease:</h3>
             <label>
-                <input id="plasPermNone" type="radio" name="perm" value="None" checked> None: Functional 'wild type' Permease
+                <input id="plasPermNone" type="radio" name="perm" value="lacY-" checked> lacY-: Functional 'wild type' Permease
             </label>
             <br>
             <label>
-                <input id="plasPermAbs" type="radio" name="perm" value="Absent"> Absent-: No lacY gene on the plasmid.
+                <input id="plasPermAbs" type="radio" name="perm" value="noneY"> Absent: No lacY gene on the plasmid.
             </label>
             <h3>Beta-Galactosidase:</h3>
             <label>
-                <input id="plasBNone" type="radio" name="beta" value="None" checked> None: Functional 'wild type' lacZ enzyme
+                <input id="plasBNone" type="radio" name="beta" value="lacZ-" checked> lacZ-: Functional 'wild type' lacZ enzyme
             </label>
             <br>
             <label>
-                <input id="plasBAbs" type="radio" name="beta" value="Absent"> Absent: No lacZ gene present on plasmid.
+                <input id="plasBAbs" type="radio" name="beta" value="noneZ"> Absent: No lacZ gene present on plasmid.
             </label>
                 </div>
     </div>
 </div>
 <div class="tabs">
-    <button><b>Run Pathway & Make Graph</b></button>
+    <button id="runBtn"><b>Run Pathway & Make Graph</b></button>
 </div>
     
     <div id="runGraph" class="content">
@@ -173,53 +173,52 @@
     <div class="combined">
     <div id="displayInputs">
         <h2><u>Initial Sugar Concentrations</u></h2>
-        <div class="lactoseExterior"><p>Lactose Exterior:</p><div id="lacExInput"></div></div>
+        <div class="lactoseExterior"><p>Lactose Exterior:</p><span id="lacExInput"></span></div>
         <br>
-        <div class="glucose"><p>Glucose:</p><div id="gluInput"></div></div>
+        <div class="glucose"><p>Glucose:</p>&nbsp;<span id="gluInput"></span></div>
         <br>
-        <div class="lactoseInterior"><p>Lactose Interior:</p><div id="lacInInput"></div></div>
+        <div class="lactoseInterior"><p>Lactose Interior:</p><span id="lacInInput"></span></div>
         <br>
-        <div class="lactoseAllo"><p>Lactose Allolactose:</p><div id="lacAlInput"></div></div>
+        <div class="lactoseAllo"><p>Lactose Allolactose:</p><span id="lacAlInput"></span></div>
         
         <h2><u>Lactose Operon</u></h2>
-        <div class="promoter"><p>Promoter:</p><div id="prom"></div></div>
+        <div class="promoter"><p>Promoter:</p>&nbsp;<span id="prom"></span></div>
         <br>
-        <div class="operator"><p>Operator:</p><div id="oper"></div></div>
+        <div class="operator"><p>Operator:</p>&nbsp;<span id="oper"></span></div>
         <br>
-        <div class="repressor"><p>Repressor:</p><div id="rep"></div> </div>
+        <div class="repressor"><p>Repressor:</p>&nbsp;<span id="rep"></span> </div>
         <br>
-        <div class="permease"><p>Permease:</p><div id="perm"></div> </div>
+        <div class="permease"><p>Permease:</p>&nbsp;<span id="perm"></span> </div>
         <br>
-        <div class="betaGal"><p>Beta-Galactosidase:</p><div id="bGal"></div> </div>
+        <div class="betaGal"><p>Beta-Galactosidase:</p><span id="bGal"></span> </div>
         <br>
-        <div class="CAP"><p>CAP-cAMP:</p><div id="CAPCAMP"></div> </div>
+        <div class="CAP"><p>CAP-cAMP:</p><span id="CAPCAMP"></span> </div>
         <br>
-        <div class="plasmid"><p>Plasmid:</p><div id="plas"></div> </div>
-        
+        <div class="plasmid"><p>Plasmid:</p>&nbsp;<span id="plas"></span> </div>    
     </div>
-<div id="plasmidInputs">
-    <h2><u>Plasmid Lactose Operon</u></h2>
-    <div class="promoter"><p>Promoter:</p><div id="prom2"></div></div>
+        
+    <div id="plasmidInputs">
+        <h2><u>Plasmid Lactose Operon</u></h2>
+        <div class="promoter"><p>Promoter:</p>&nbsp;<span id="prom2"></span></div>
         <br>
-        <div class="operator"><p>Operator:</p><div id="oper2"></div></div>
+        <div class="operator"><p>Operator:</p>&nbsp;<span id="oper2"></span></div>
         <br>
-        <div class="repressor"><p>Repressor:</p><div id="rep2"></div> </div>
+        <div class="repressor"><p>Repressor:</p>&nbsp;<span id="rep2"></span> </div>
         <br>
-        <div class="permease"><p>Permease:</p><div id="perm2"></div> </div>
+        <div class="permease"><p>Permease:</p>&nbsp;<span id="perm2"></span> </div>
         <br>
-        <div class="betaGal"><p>Beta-Galactosidase:</p><div id="bGal2"></div> </div>
+        <div class="betaGal"><p>Beta-Galactosidase:</p><span id="bGal2"></span> </div>
+    </div>
 
-
-</div>
-
-</div>
+    <div id="graphContainer">
+        <canvas id="graph">
+        </canvas>
+    </div>
+    </div>
     
     <div class="tabs">
     <a href="lastPage.html"><button><b>End Simulation Session</b></button></a>
     </div>
-
-
-
 
     <script src="js/scripts.js"></script>
 </body>

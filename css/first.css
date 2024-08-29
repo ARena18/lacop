@@ -1,20 +1,24 @@
+/* Authors : Gina Philipose, Rena Ahn, Zachary Mullen
+CSS File : first.css
+Last Update : August 29th, 2024 */
+
 * {
     background-color: #c9d6e1;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* header */
 .header h1{
     display: inline;
     background-color: #075b6f;
     color: #c9d6e1;
     padding-left: 5px;
 }
-
 .header img {
     padding-left: 15px;
     padding-top: 45px;
     padding-bottom: 0px;
 }
-
 .header, .header img {
     background-color: #075b6f;
     margin-top: -23px;
@@ -32,7 +36,6 @@
             hover {
                 opacity: 0.6;
             }
-            
         }
         h3:hover {
             opacity: 0.5;
@@ -40,7 +43,21 @@
     }
 }
 
+/* instructions container */
+.instructions {
+    margin-top: 20px;
+    padding: 5px;
+    background-color: #075b6f;
+    color: #c9d6e1;
+    border: 1px solid;
+    h2, h3 {
+        background-color: #075b6f;
+        padding: 0px;
+        margin: 0px;
+    }
+}
 
+/* container border */
 .container1 {
     margin-top: 10px;
     padding: 5px;
@@ -48,13 +65,7 @@
     border: 1px solid;
 }
 
-
-
-
-
-
-
-
+/* 'Start Simulation Session' button design */
 .tabs {
     overflow: hidden;
     background-color: #075b6f;
@@ -63,7 +74,6 @@
         background-color: #075b6f;
     }
 }
-
 .tabs button{
     background-color: inherit;
     float: left;
@@ -75,7 +85,6 @@
     font-size: 17px;
     color: #c9d6e1;
 }
-
 .tabs button:hover {
     background-color: rgb(33, 72, 83);
     b, a {

@@ -1,5 +1,5 @@
 /* Authors : Gina Philipose, Rena Ahn, Zachary Mullen
-CSS File : forTutorial.css
+CSS File : submit.css
 Last Update : August 29th, 2024 */
 
 * {
@@ -43,7 +43,23 @@ Last Update : August 29th, 2024 */
     }
 }
 
-/* tab buttons */
+/* overall container border */
+.container1 {
+    margin-top: 10px;
+    padding: 5px;
+    color: rgb(33, 72, 83);
+    border: 1px solid;
+}
+
+/* improvement results/scores */
+.con0, .con1, .con2, .con3 {
+    h2, h3 {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* pre-test, post-test, and correct answer tabs */
 .tabs {
     overflow: hidden;
     background-color: #075b6f;
@@ -76,11 +92,14 @@ Last Update : August 29th, 2024 */
     }
 }
 
-/* content when displayed */
+/* content border */
 .content {
     display: none;
     padding: 6px 12px;
     border-top: none;
     color: #213e47;
     border: 1px solid #213e47;
+    b {
+        color: #213e47;
+    }
 }

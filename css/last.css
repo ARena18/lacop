@@ -1,5 +1,5 @@
 /* Authors : Gina Philipose, Rena Ahn, Zachary Mullen
-CSS File : forTutorial.css
+CSS File : last.css
 Last Update : August 29th, 2024 */
 
 * {
@@ -35,7 +35,7 @@ Last Update : August 29th, 2024 */
             background-color: #075b6f;
             hover {
                 opacity: 0.6;
-            }
+            }           
         }
         h3:hover {
             opacity: 0.5;
@@ -43,11 +43,19 @@ Last Update : August 29th, 2024 */
     }
 }
 
-/* tab buttons */
+/* gives outline for questions */
+.container1 {
+    margin-top: 10px;
+    padding: 5px;
+    color: rgb(33, 72, 83);
+    border: 1px solid;
+}
+
+/* 'submit' button design */
 .tabs {
     overflow: hidden;
     background-color: #075b6f;
-    b, a, span {
+    b, a {
         overflow: hidden;
         background-color: #075b6f;
     }
@@ -65,22 +73,7 @@ Last Update : August 29th, 2024 */
 }
 .tabs button:hover {
     background-color: rgb(33, 72, 83);
-    b, a, span {
+    b, a {
         background-color: rgb(33, 72, 83);
     }
-}
-.tabs button.active {
-    background-color: #213e47;
-    b, span {
-        background-color: #213e47;
-    }
-}
-
-/* content when displayed */
-.content {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
-    color: #213e47;
-    border: 1px solid #213e47;
 }

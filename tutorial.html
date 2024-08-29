@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<!-- Authors : Gina Philipose, Rena Ahn, Zachary Mullen
+HTML File : tutorial.html
+Last Update : August 29th, 2024 -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,36 +13,68 @@
 </head>
 <body>
     <div class="header">
-        <!-- <br> -->
         <img src="ecoli.png" width="100" height="50">
         <h1>LacOp</h1>
-        <a href="simulation.html"><button><h3>Simulation</h3></button></a>
+        <a href="index.html"><button><h3>Simulation</h3></button></a>
         <a href="tutorial.html"><button><h3>Tutorial</h3></button></a>
         <a href="about.html"><button><h3>About</h3></button></a>
-        
     </div> 
     <br>
 
-    <!-- <h1><u>Describe the graph here/what can be done with it here - explanations</h1></u> -->
-<div class="combined">
-    <div class="contents">
-    <h2>
-        <!-- explain the different parts here -->
-        <button id="overview" type="button"><h2><b>Overview</b></h2></button>
-        <br>
-        <button id="background" type="button"><h2><b>Background</b></h2></button>
-        <br>
-        <button id="partA" type="button"><h2><b>Part A</b></h2></button>
-        <br>
-        <button id="partB" type="button"><h2><b>Part B</b></h2></button>        
-        <br>
-        <button id="partC" type="button"><h2><b>Part C</b></h2></button>
-        <br>
-        <button id="partD" type="button"><h2><b>Part D</b></h2></button>
-    </h2>
+    <div class="tabs">
+        <button id="over" class="tablinks" onclick="openTab(event, 'overview')"><b>Overview</b></button>
+        <button class="tablinks" onclick="openTab(event, 'background')"><b>Background</b></button>
+        <button class="tablinks" onclick="openTab(event, 'papers')"><b>Papers</b></button>
     </div>
-    <div id="textContent"></div>
-</div>
-<script src="js/tutorialScript.js"></script>
+
+    <div id="container1">
+        <div id="overview" class="content">
+            <p> <b>LacOp:</b> <i>An online simulation on Prokaryotic Transcriptional Regulation</i> </p> 
+                
+            <p> This simulation approximates the function of the E coli “Lactose Operon” in a single E. coli. 
+            Use the tabs below to configure an initial sugar concentration, select desired mutations and then click 
+            the button to “Run Pathway & Make Graph”. For example, (e.g. select Sugars, and set Lactose outside to 
+            100 units, with the other sugars set to ‘0’), and select “Run…’. Each run will create a dynamic pathway 
+            simulation with these inputs on our server and graph which the concentrations of key molecules through time. 
+            By rerunning the pathway and modifying sugar levels and/or mutations, students will gain a deeper understanding 
+            of how the lac operon is transcriptionally regulated. </p>
+        
+            <p> For initial simplicity, this simulation runs with a defaults that simulates the wild-type Lac Operon, 
+            with the exception that “CAP” has been initially disabled. When students are ready for additional complexity, 
+            they can activate CAP using the “CAP-cAMP complex” tab. Students can also test partial diploid strains using 
+            the “Plasmid” tab. </p>
+            
+            <p> The Lac Operon is most famous for its role in helping geneticists understand transcriptional gene regulation in prokaryotes. 
+            In this exercise, you will use an interactive online simulation called ‘LacOp’ to model the metabolism of a single E.coli cell.  
+            Our goal is to help you understand the dynamics of transcriptional gene regulation in a more fun and effective way than you could 
+            from a textbook. </p>
+        </div>
+        <div id="background" class="content">
+            <p>Bacteria often have genes whose proteins work together in biochemical pathway(s).  Often those genes are clustered and 
+            transcribed together on a single RNA.  This sort of structure is called on operon.  Operons are thought to simplify 
+            transcriptional regulation because proteins that will be needed together in a pathway are transcribed together in a single RNA.</p>
+            
+            <p> The lac operon consists of a set of ‘genes’ E.coli uses to metabolize lactose into chemical energy.</p>
+
+            <p> Since we are here to study gene regulation, the molecular ‘stars’ of this exercise are the regulatory molecules;  
+            repressor(lacI), operator (lacO) and inducer (allolactose). Specifically, Repressor protein (lacI)  binds to the operon’s 
+            operator element (lacO), thereby repressing transcription of the operon.  However, if lactose is available in the environment, 
+            repressor binds lactose’s derivative Allolactose (aka. inducer). When repressor binds this allolactose ‘inducer’, it releases 
+            from the operator element, thus inducing transcription of the structural genes. These structural genes encode three enzymes 
+            (lacZ, lacY and lacA).  These structural genes (unlike the regulators) are the ones that directly metabolize lactose into useful 
+            energy. As a byproduct, LacZ also metabolizes lactose into Allolactose, which feeds back into the regulation of transcription.</p>
+            <img src="qDiagram.jpeg" width="650" height="150">
+        </div>
+        <div id="papers" class="content">
+            <br>
+            <a href="LacOpPaper.pdf" download>LacOp Paper on the Old Version of the LacOp Simulation</a>
+            <br> <br>
+            <a href="LacOpTutorial.docx" download>LacOp Tutorial</a>
+            <br> <br>
+            <a href="LOCIQuestions.pdf" download>LOCI Questions</a>
+        </div>
+    </div>
+
+    <script src="js/tutorialScript.js"></script>
 </body>
 </html>
